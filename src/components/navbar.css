@@ -1,0 +1,15 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8C8683;
+    height: 75px;
+    font-size: 25px;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 60%;
+}
