@@ -1,7 +1,10 @@
-import React from 'react';
-import './navbar.css';
+import React, { useState } from 'react';
+import { HiMenu } from 'react-icons/hi';
+import { HiOutlineX } from 'react-icons/hi';
+import './Navbar.css';
 
-const navbar = () => {
+const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div className="nav">
       <h2>Therapist</h2>
@@ -15,8 +18,26 @@ const navbar = () => {
         <a href="">Sign Up</a>
         <a href="">Login</a>
       </div>
+      <div className="nav-smallscreen ">
+        <HiMenu className="screen-menu" onClick={() => setToggleMenu(true)} />
+
+        {toggleMenu && (
+          <div className="nav-smallscreen-overlay">
+            <HiOutlineX
+              className="overlay-close"
+              onClick={() => setToggleMenu(false)}
+            />
+            <ul className="nav-smallscreen-items">
+              <li>Home</li>
+              <li>About</li>
+              <li>Services</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;
